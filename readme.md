@@ -1,0 +1,1 @@
+Project for week 5 of the HackerYou course, using jQuery to build an image gallery.

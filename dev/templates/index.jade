@@ -1,0 +1,35 @@
+include includes/_header.jade
+//- include includes/script.js
+
+body
+	div(class="container clearfix")
+		div(class="gallery")
+			h1 jQuery gallery
+
+			div(class="previews")
+				a(href="#" class="selected" data-full="assets/images/architecture/architecture1large.jpg")
+					img(src="assets/images/architecture/architecture1small.jpg")
+				a(href="#" data-full="assets/images/architecture/architecture2large.jpg")
+					img(src="assets/images/architecture/architecture2small.jpg")
+				a(href="#" data-full="assets/images/architecture/architecture3large.jpg")
+					img(src="assets/images/architecture/architecture3small.jpg")
+				a(href="#" data-full="assets/images/architecture/architecture4large.jpg")
+					img(src="assets/images/architecture/architecture4small.jpg")
+				a(href="#" data-full="assets/images/architecture/architecture5large.jpg")
+					img(src="assets/images/architecture/architecture5small.jpg")
+
+			div(class="full")
+				//- first image is viewable at the start
+				img(src="assets/images/architecture/architecture1large.jpg")
+			
+script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
+
+script.
+	$(function() {
+		$('.previews a').on('click',function(){
+			var src = $(this).data('src');
+			$('img.full').attr('src',src);
+			});
+		});
+
+//- script(src="fancybox/jquery.fancybox.js?v=2.1.4")
