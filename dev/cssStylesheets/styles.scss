@@ -23,29 +23,39 @@
 }
 
 
-//Vars
+
 
 
 body {
+width:100%;
+background-color: black;
+
 
 .container {
-    width: 960px;
+    max-width: 1000px;
+    background-image:url("../../assets/images/denim_@2X.png");
+    width:100%;
     margin: 0 auto;
-    padding: 20px;
+    padding: 10px;
     padding-bottom: 40px;
     font-family: 'Calibri','CalibriRegular',Verdana,Arial,Helvetica,sans-serif;
 
-
+.selected {
+  opacity:0.33;
+}
 .gallery {}
-.gallery .previews, .gallery .full, .gallery .desc {
+.gallery .previews, .gallery .mainImage, .gallery .desc {
     float: left;
     margin-right: 10px;
+     margin-left: 2%;
 }
 
-.gallery .desc, .gallery .full {
-    width: 400px;
+.gallery .desc, .gallery .mainImage {
+    max-width: 400px;
+    width:100%;
     font-size: 12px;
 }
+
 
 .gallery .desc h2 {
     margin-top: 0;
@@ -53,32 +63,194 @@ body {
 
 .gallery .previews a {
     display: block;
+    border-bottom: 10px solid white;
+    border-radius:0.5px;
     margin-bottom: 10px;
+   
+    box-shadow:0 0 0 2px white, 0 0 5px 4px black;
+
+      &:hover {
+         box-shadow:0 0 0 2px white, 0 0 4px 3px black;
+      }
 }
 
-.gallery .full, .gallery .full img {
-    height: 600px;
+.gallery .full, .gallery .mainImage img {
+    margin-left: 10%;
+    height: 445px;
+    border-bottom: 60px solid white;
+    box-shadow:0 0 0 2px white, 0 0 5px 4px black;
 }
 
-.gallery .previews a, .gallery .full {
-    border: 4px solid #eee;
+
+.gallery .previews a, .gallery .mainImage {
+    // border: 2px solid gray;
+}
+
+.placeholder {
+  background-color: black;
+  width: 650px;
+  height: 430px;
+  position: absolute;
+  left:310px;
+  top:95px;
+  opacity: 0.2;
+
+
+    h3 {
+      text-align: center;
+      width:200px;
+      margin-left:30%;
+      margin-top: 20%;
+      font-family: verdana;
+      color:white;
+    }
 }
 
 .gallery .previews a:hover, .gallery .previews a.selected {
-    border: 4px solid #777;
+   box-shadow:0 0 0 2px white, 0 0 4px 3px black;
 }
 
-.gallery .full img:hover {
+.gallery .mainImage img:hover {
     cursor: pointer;
 }
 
-.clearfix:after {
-   content: ".";
-   visibility: hidden;
-   display: block;
-   height: 0;
-   clear: both;
+
+.mainImage {
+  opacity: 0;
 }
+// .camera {
+//   float:left;
+//   background-color: black;
+//   width:20px;
+//   height:20px;
+// }
+
+
+
+
+.textbox {
+  float:left;
+  max-width:200px;
+  height:300px;
+  margin-left: 25%;
+  margin-top:0;
+  padding:20px;
+  background-color: white;
+  opacity:0;
+
+  // p {
+  //   padding:10px;
+  // }
+}
+
+
+// .textbox1,
+// .textbox2,
+// .textbox3,
+// .textbox4,
+// .textbox5 {
+//   float:left;
+//   max-width:200px;
+//   margin-left: 26%;
+//   margin-top:0;
+//   padding:20px;
+//   background-color: white;
+//   display:none
+// }
+
+.switchHolder {
+  clear:both;
+  width:800px;
+  margin-left: 5%;
+
+  border-bottom: 2px solid gray;
+
+
+.normalSwitch {
+ 
+  img {
+    width:40px;
+    height:40px;
+    clear:both;
+    float: left;
+
+    margin-left: 32%;
+    margin-top: 2%;
+    background-color: white;
+    border-radius:10%;
+    box-shadow: 0 0 0 4px white, 0 0 5px 4px black;
+      &:hover {
+        box-shadow: 0 0 2px 5px white;
+        cursor:pointer;
+      }
+  }
+}
+
+.greyScaleSwitch {
+
+  img {
+    width:40px;
+    height: 40px;
+    float: left;
+    margin-left: 10%;
+    margin-top: 2%;
+    background-color: gray;
+    border-radius:10%;
+    box-shadow: 0 0 0 4px gray, 0 0 5px 4px black;
+      &:hover {
+        box-shadow: 0 0 2px 5px gray;
+        cursor:pointer;
+      }
+  }
+}
+
+.sepiaSwitch {
+  img {
+    width:40px;
+    height: 40px;
+    float: left;
+    margin-left: 10%;
+    margin-top: 2%;
+    background-color: brown;
+    border-radius:10%;
+    box-shadow: 0 0 0 4px brown, 0 0 5px 4px black;
+      &:hover {
+        box-shadow: 0 0 2px 5px brown;
+        cursor:pointer;
+      }
+  }
+}
+
+.saturationSwitch {
+  img {
+    width:40px;
+    height: 40px;
+    float: left;
+    margin-left: 10%;
+    margin-top: 2%;
+    background-color: red;
+    border-radius:10%;
+    box-shadow: 0 0 0 4px red, 0 0 5px 4px black;
+      &:hover {
+        box-shadow: 0 0 2px 5px red;
+        cursor:pointer;
+      }
+  }
+}
+}
+
+.greyScaleFilter {
+  filter: grayscale(1);
+}
+
+.sepiaFilter {
+   filter: sepia(1);
+}
+
+.saturationFilter {
+  filter: saturate(6);
+}
+
 }
 	
 

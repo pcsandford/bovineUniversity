@@ -7,29 +7,157 @@ body
 			h1 jQuery gallery
 
 			div(class="previews")
-				a(href="#" class="selected" data-full="assets/images/architecture/architecture1large.jpg")
+				a(value="1" href="#" data-full="assets/images/architecture/architecture1large.jpg" data-info="1"
+					data-zoom-image="assets/images/architecture/architecture1large.jpg")
 					img(src="assets/images/architecture/architecture1small.jpg")
-				a(href="#" data-full="assets/images/architecture/architecture2large.jpg")
+				a(value="2" href="#" data-full="assets/images/architecture/architecture2large.jpg" data-info="2"
+					data-zoom-image="assets/images/architecture/architecture2large.jpg")
 					img(src="assets/images/architecture/architecture2small.jpg")
-				a(href="#" data-full="assets/images/architecture/architecture3large.jpg")
+				a(value="3" href="#" data-full="assets/images/architecture/architecture3large.jpg" data-info="3"
+					data-zoom-image="assets/images/architecture/architecture3large.jpg")
 					img(src="assets/images/architecture/architecture3small.jpg")
-				a(href="#" data-full="assets/images/architecture/architecture4large.jpg")
+				a(value="4" href="#" data-full="assets/images/architecture/architecture4large.jpg" data-info="4"
+					data-zoom-image="assets/images/architecture/architecture4large.jpg")
 					img(src="assets/images/architecture/architecture4small.jpg")
-				a(href="#" data-full="assets/images/architecture/architecture5large.jpg")
+				a(value="5" href="#" data-full="assets/images/architecture/architecture5large.jpg" data-info="5"
+					data-zoom-image="assets/images/architecture/architecture5large.jpg")
 					img(src="assets/images/architecture/architecture5small.jpg")
+			
 
-			div(class="full")
+			//- div(class="magnify")
+			//-magnifying glass container
+			//- div(class="large")
+			
+
+			div(class="mainImage")
 				//- first image is viewable at the start
-				img(src="assets/images/architecture/architecture1large.jpg")
+				a(class="fancyImage" href="")
+					img(id ="zoom" src="" data-zoom-image="")
+
+			div(class="placeholder")
+				h3 Click on an thumbnail on the left to view the larger image
+
+			div(class="textbox")
+				p
+			//- div(class="textbox1")
+			//- 	p 1.
+
+			//- div(class="textbox2")
+			//- 	p 2.
+
+			//- div(class="textbox3")s
+			//- 	p 3.
+
+			//- div(class="textbox4")
+			//- 	p 4.
+			
+			//- div(class="textbox5")
+			//- 	p 5.
+
+			
+
+			div(class="switchHolder")
+				div(class="normalSwitch")
+					img(src="assets/images/camera.png")
+
+
+				div(class="greyScaleSwitch")
+					img(src="assets/images/camera.png")
+
+				div(class="sepiaSwitch")
+					img(src="assets/images/camera.png")
+
+				div(class="saturationSwitch")
+					img(src="assets/images/camera.png")
+
 			
 script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
+script(src="fancybox/jquery.fancybox.js?v=2.1.4")
+script(src="jquery.mlens-1.4.min.js")
 
 script.
-	$(function() {
-		$('.previews a').on('click',function(){
-			var src = $(this).data('src');
-			$('img.full').attr('src',src);
-			});
-		});
+	$(function(){
+		
 
-//- script(src="fancybox/jquery.fancybox.js?v=2.1.4")
+
+		$('.previews a').on('click',function(e){
+			e.preventDefault();
+			$('.mainImage').css("opacity", 1)
+			var biggerPicture = $(this).data('full');
+			$('.mainImage img').attr('src',biggerPicture);
+			$('.placeholder').css("display", "none");
+			$('.textbox').css("opacity", 1);
+			//- $('.textbox').css("margin-left", 28%);
+			//- var zoomPicture = $(this).data('zoom-image');
+			//- $('.mainImage img').attr('data-zoom-image',zoomPicture);
+			//- $('.mainImage img').imageLens({ lensSize: 200 })
+			
+			$(this).fadeTo( "slow", 0.33 );
+			$('p').html($(this).data('info'));
+			$('.fancyImage').attr('href', biggerPicture);
+			
+		});
+			
+		
+		
+		
+		$('.fancyImage').fancybox();
+	
+
+		
+		//greyscalefilter stuff
+		$('.normalSwitch').on('click', function(){
+		console.log('test');
+			$('.mainImage img').removeClass('greyScaleFilter');
+			$('.mainImage img').removeClass('sepiaFilter');
+			$('.mainImage img').removeClass('saturationFilter');
+
+		}); 
+
+		$('.greyScaleSwitch').on('click', function(){
+		console.log('test');
+			$('.mainImage img').addClass('greyScaleFilter');
+			$('.mainImage img').removeClass('sepiaFilter');
+			$('.mainImage img').removeClass('saturationFilter');
+		}); 
+
+		$('.sepiaSwitch').on('click', function(){
+		console.log('test');
+			$('.mainImage img').addClass('sepiaFilter');
+			$('.mainImage img').removeClass('saturationFilter');
+			$('.mainImage img').removeClass('greyScaleFilter');
+		}); 
+
+		$('.saturationSwitch').on('click', function(){
+		console.log('test');
+			$('.mainImage img').addClass('saturationFilter');
+			$('.mainImage img').removeClass('sepiaFilter');
+			$('.mainImage img').removeClass('greyScaleFilter');
+		}); 
+		
+
+
+
+		//- $(".mainImage img").mlens(
+		//- 	{
+		//- 		imgSrc: $(".mainImage img").attr("src"),	// path of the hi-res version of the image
+		//- 		imgSrc2x: $(".mainImage img").attr("data-full"),	// path of the hi-res @2x version of the image
+																	
+		//- 		lensShape: "circle",	// shape of the lens (circle/square)
+		//- 		lensSize: 180,			// size of the lens (in px)
+		//- 		borderSize: 0,			// size of the lens border (in px)
+		//- 		borderColor: "#fff",	// color of the lens border (#hex)
+		//- 		borderRadius: 0,	// border radius (optional, only if the shape is square)
+		//- //- 		//- imgOverlay: $("#green_monster").attr("data-overlay"), // path of the overlay image (optional)
+		//- 		//- overlayAdapt: true // true if the overlay image has to adapt to the lens size (true/false)
+		//- 		zoomLevel: 3
+		//- });
+		
+	
+		
+
+	});
+
+	
+	
+
