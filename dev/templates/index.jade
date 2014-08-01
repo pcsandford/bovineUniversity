@@ -106,13 +106,13 @@ script.
 
 		
 		//colourfilter stuff
-		//- $('.normalSwitch').on('click', function(){
-		//- console.log('test');
-		//- 	$('.mainImage img').removeClass('greyScaleFilter');
-		//- 	$('.mainImage img').removeClass('sepiaFilter');
-		//- 	$('.mainImage img').removeClass('saturationFilter');
+		$('.normalSwitch').on('click', function(){
+		console.log('test');
+			$('.mainImage img').removeClass('greyScaleFilter');
+			$('.mainImage img').removeClass('sepiaFilter');
+			$('.mainImage img').removeClass('saturationFilter');
 
-		//- }); 
+		}); 
 
 		$('.greyScaleSwitch').on('click', function(){
 		console.log('test');
@@ -136,7 +136,14 @@ script.
 		}); 
 		
 
-
+		//- $('.mainImage').mlens({
+		//- 	imgSrc: $('.mainImage img').attr('#zoom'),
+		//- 	lensShape: 'circle',
+		//- 	lensSize: 160,
+		//- 	borderSize: 0,
+		//- 	borderColor: '#fff',
+		//- 	zoomLevel: 0.5
+		//- });
 
 		//- $(".mainImage img").mlens(
 		//- 	{
