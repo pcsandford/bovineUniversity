@@ -25,48 +25,148 @@
 
 
 
-
 body {
 width:100%;
-background-color: black;
+background-color: #383434;
 
 
 .container {
+    width:100%;
     max-width: 1000px;
-    background-image:url("../../assets/images/denim_@2X.png");
+    // background-image:url("../../assets/images/paper_@2X.png");
+    background-color: #F7F1E0;
     width:100%;
     margin: 0 auto;
     padding: 10px;
     padding-bottom: 40px;
     font-family: 'Calibri','CalibriRegular',Verdana,Arial,Helvetica,sans-serif;
 
-.selected {
+
+  .selected {
   opacity:0.33;
-}
-.gallery {}
-.gallery .previews, .gallery .mainImage, .gallery .desc {
+  }
+
+.greyScaleFilter {
+      filter: grayscale(1);
+    }
+
+.sepiaFilter {
+       filter: sepia(1);
+    }
+
+.saturationFilter {
+      filter: saturate(6);
+    }
+
+
+    .switchHolder {
+      clear:both;
+      width:800px;
+      margin-left: 5%;
+
+      // border-bottom: 2px solid gray;
+
+
+
+    .normalSwitch {
+     
+      img {
+        width:40px;
+        height:40px;
+        clear:both;
+        float: left;
+
+        margin-left: 32%;
+        margin-top: 2%;
+        background-color: white;
+        border-radius:10%;
+        box-shadow: 0 0 0 4px white, 0 0 5px 4px black;
+          &:hover {
+            box-shadow: 0 0 2px 6px white;
+            cursor:pointer;
+          }
+      }
+    }
+
+    .greyScaleSwitch {
+
+      img {
+        width:40px;
+        height: 40px;
+        float: left;
+        margin-left: 10%;
+        margin-top: 2%;
+        background-color: gray;
+        border-radius:10%;
+        box-shadow: 0 0 0 4px gray, 0 0 5px 4px black;
+          &:hover {
+            box-shadow: 0 0 2px 6px gray;
+            cursor:pointer;
+          }
+      }
+    }
+
+    .sepiaSwitch {
+      img {
+        width:40px;
+        height: 40px;
+        float: left;
+        margin-left: 10%;
+        margin-top: 2%;
+        background-color: brown;
+        border-radius:10%;
+        box-shadow: 0 0 0 4px brown, 0 0 5px 4px black;
+          &:hover {
+            box-shadow: 0 0 2px 6px brown;
+            cursor:pointer;
+          }
+      }
+    }
+
+    .saturationSwitch {
+      img {
+        width:40px;
+        height: 40px;
+        float: left;
+        margin-left: 10%;
+        margin-top: 2%;
+        background-color: red;
+        border-radius:10%;
+        box-shadow: 0 0 0 4px red, 0 0 5px 4px black;
+          &:hover {
+            box-shadow: 0 0 2px 6px red;
+            cursor:pointer;
+          }
+      }
+    }
+    }
+
+
+
+// .gallery {}
+.gallery .previews, 
+.gallery .mainImage {
     float: left;
     margin-right: 10px;
      margin-left: 2%;
 }
 
-.gallery .desc, .gallery .mainImage {
+.gallery .mainImage {
     max-width: 400px;
     width:100%;
     font-size: 12px;
 }
 
 
-.gallery .desc h2 {
-    margin-top: 0;
-}
+// .gallery .desc h2 {
+//     margin-top: 0;
+// }
 
 .gallery .previews a {
     display: block;
     border-bottom: 10px solid white;
     border-radius:0.5px;
     margin-bottom: 10px;
-   
     box-shadow:0 0 0 2px white, 0 0 5px 4px black;
 
       &:hover {
@@ -74,12 +174,16 @@ background-color: black;
       }
 }
 
-.gallery .full, .gallery .mainImage img {
+.gallery .full, 
+.gallery .mainImage img {
     margin-left: 10%;
     height: 445px;
     border-bottom: 60px solid white;
     box-shadow:0 0 0 2px white, 0 0 5px 4px black;
 }
+
+
+  
 
 
 .gallery .previews a, .gallery .mainImage {
@@ -106,7 +210,8 @@ background-color: black;
     }
 }
 
-.gallery .previews a:hover, .gallery .previews a.selected {
+.gallery .previews a:hover,
+.gallery .previews a.selected {
    box-shadow:0 0 0 2px white, 0 0 4px 3px black;
 }
 
@@ -130,17 +235,13 @@ background-color: black;
 
 .textbox {
   float:left;
-  max-width:200px;
+  max-width:150px;
   height:300px;
   margin-left: 25%;
   margin-top:0;
   padding:20px;
-  background-color: white;
-  opacity:0;
-
-  // p {
-  //   padding:10px;
-  // }
+  background-color: transparent;
+  
 }
 
 
@@ -158,100 +259,11 @@ background-color: black;
 //   display:none
 // }
 
-.switchHolder {
-  clear:both;
-  width:800px;
-  margin-left: 5%;
-
-  border-bottom: 2px solid gray;
 
 
-.normalSwitch {
- 
-  img {
-    width:40px;
-    height:40px;
-    clear:both;
-    float: left;
 
-    margin-left: 32%;
-    margin-top: 2%;
-    background-color: white;
-    border-radius:10%;
-    box-shadow: 0 0 0 4px white, 0 0 5px 4px black;
-      &:hover {
-        box-shadow: 0 0 2px 5px white;
-        cursor:pointer;
-      }
-  }
-}
 
-.greyScaleSwitch {
 
-  img {
-    width:40px;
-    height: 40px;
-    float: left;
-    margin-left: 10%;
-    margin-top: 2%;
-    background-color: gray;
-    border-radius:10%;
-    box-shadow: 0 0 0 4px gray, 0 0 5px 4px black;
-      &:hover {
-        box-shadow: 0 0 2px 5px gray;
-        cursor:pointer;
-      }
-  }
-}
-
-.sepiaSwitch {
-  img {
-    width:40px;
-    height: 40px;
-    float: left;
-    margin-left: 10%;
-    margin-top: 2%;
-    background-color: brown;
-    border-radius:10%;
-    box-shadow: 0 0 0 4px brown, 0 0 5px 4px black;
-      &:hover {
-        box-shadow: 0 0 2px 5px brown;
-        cursor:pointer;
-      }
-  }
-}
-
-.saturationSwitch {
-  img {
-    width:40px;
-    height: 40px;
-    float: left;
-    margin-left: 10%;
-    margin-top: 2%;
-    background-color: red;
-    border-radius:10%;
-    box-shadow: 0 0 0 4px red, 0 0 5px 4px black;
-      &:hover {
-        box-shadow: 0 0 2px 5px red;
-        cursor:pointer;
-      }
-  }
-}
-}
-
-.greyScaleFilter {
-  filter: grayscale(1);
-}
-
-.sepiaFilter {
-   filter: sepia(1);
-}
-
-.saturationFilter {
-  filter: saturate(6);
-}
-
-}
-	
+}//container closing
 
 }//body closing

@@ -146,10 +146,11 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 body {
   width: 100%;
-  background-color: black; }
+  background-color: #383434; }
   body .container {
+    width: 100%;
     max-width: 1000px;
-    background-image: url("../../assets/images/denim_@2X.png");
+    background-color: #F7F1E0;
     width: 100%;
     margin: 0 auto;
     padding: 10px;
@@ -157,16 +158,85 @@ body {
     font-family: 'Calibri','CalibriRegular',Verdana,Arial,Helvetica,sans-serif; }
     body .container .selected {
       opacity: 0.33; }
-    body .container .gallery .previews, body .container .gallery .mainImage, body .container .gallery .desc {
+    body .container .greyScaleFilter {
+      -webkit-filter: grayscale(1);
+              filter: grayscale(1); }
+    body .container .sepiaFilter {
+      -webkit-filter: sepia(1);
+              filter: sepia(1); }
+    body .container .saturationFilter {
+      -webkit-filter: saturate(6);
+              filter: saturate(6); }
+    body .container .switchHolder {
+      clear: both;
+      width: 800px;
+      margin-left: 5%; }
+      body .container .switchHolder .normalSwitch img {
+        width: 40px;
+        height: 40px;
+        clear: both;
+        float: left;
+        margin-left: 32%;
+        margin-top: 2%;
+        background-color: white;
+        border-radius: 10%;
+        -webkit-box-shadow: 0 0 0 4px white, 0 0 5px 4px black;
+                box-shadow: 0 0 0 4px white, 0 0 5px 4px black; }
+        body .container .switchHolder .normalSwitch img:hover {
+          -webkit-box-shadow: 0 0 2px 6px white;
+                  box-shadow: 0 0 2px 6px white;
+          cursor: pointer; }
+      body .container .switchHolder .greyScaleSwitch img {
+        width: 40px;
+        height: 40px;
+        float: left;
+        margin-left: 10%;
+        margin-top: 2%;
+        background-color: gray;
+        border-radius: 10%;
+        -webkit-box-shadow: 0 0 0 4px gray, 0 0 5px 4px black;
+                box-shadow: 0 0 0 4px gray, 0 0 5px 4px black; }
+        body .container .switchHolder .greyScaleSwitch img:hover {
+          -webkit-box-shadow: 0 0 2px 6px gray;
+                  box-shadow: 0 0 2px 6px gray;
+          cursor: pointer; }
+      body .container .switchHolder .sepiaSwitch img {
+        width: 40px;
+        height: 40px;
+        float: left;
+        margin-left: 10%;
+        margin-top: 2%;
+        background-color: brown;
+        border-radius: 10%;
+        -webkit-box-shadow: 0 0 0 4px brown, 0 0 5px 4px black;
+                box-shadow: 0 0 0 4px brown, 0 0 5px 4px black; }
+        body .container .switchHolder .sepiaSwitch img:hover {
+          -webkit-box-shadow: 0 0 2px 6px brown;
+                  box-shadow: 0 0 2px 6px brown;
+          cursor: pointer; }
+      body .container .switchHolder .saturationSwitch img {
+        width: 40px;
+        height: 40px;
+        float: left;
+        margin-left: 10%;
+        margin-top: 2%;
+        background-color: red;
+        border-radius: 10%;
+        -webkit-box-shadow: 0 0 0 4px red, 0 0 5px 4px black;
+                box-shadow: 0 0 0 4px red, 0 0 5px 4px black; }
+        body .container .switchHolder .saturationSwitch img:hover {
+          -webkit-box-shadow: 0 0 2px 6px red;
+                  box-shadow: 0 0 2px 6px red;
+          cursor: pointer; }
+    body .container .gallery .previews,
+    body .container .gallery .mainImage {
       float: left;
       margin-right: 10px;
       margin-left: 2%; }
-    body .container .gallery .desc, body .container .gallery .mainImage {
+    body .container .gallery .mainImage {
       max-width: 400px;
       width: 100%;
       font-size: 12px; }
-    body .container .gallery .desc h2 {
-      margin-top: 0; }
     body .container .gallery .previews a {
       display: block;
       border-bottom: 10px solid white;
@@ -177,7 +247,8 @@ body {
       body .container .gallery .previews a:hover {
         -webkit-box-shadow: 0 0 0 2px white, 0 0 4px 3px black;
                 box-shadow: 0 0 0 2px white, 0 0 4px 3px black; }
-    body .container .gallery .full, body .container .gallery .mainImage img {
+    body .container .gallery .full,
+    body .container .gallery .mainImage img {
       margin-left: 10%;
       height: 445px;
       border-bottom: 60px solid white;
@@ -198,7 +269,8 @@ body {
         margin-top: 20%;
         font-family: verdana;
         color: white; }
-    body .container .gallery .previews a:hover, body .container .gallery .previews a.selected {
+    body .container .gallery .previews a:hover,
+    body .container .gallery .previews a.selected {
       -webkit-box-shadow: 0 0 0 2px white, 0 0 4px 3px black;
               box-shadow: 0 0 0 2px white, 0 0 4px 3px black; }
     body .container .gallery .mainImage img:hover {
@@ -207,81 +279,9 @@ body {
       opacity: 0; }
     body .container .textbox {
       float: left;
-      max-width: 200px;
+      max-width: 150px;
       height: 300px;
       margin-left: 25%;
       margin-top: 0;
       padding: 20px;
-      background-color: white;
-      opacity: 0; }
-    body .container .switchHolder {
-      clear: both;
-      width: 800px;
-      margin-left: 5%;
-      border-bottom: 2px solid gray; }
-      body .container .switchHolder .normalSwitch img {
-        width: 40px;
-        height: 40px;
-        clear: both;
-        float: left;
-        margin-left: 32%;
-        margin-top: 2%;
-        background-color: white;
-        border-radius: 10%;
-        -webkit-box-shadow: 0 0 0 4px white, 0 0 5px 4px black;
-                box-shadow: 0 0 0 4px white, 0 0 5px 4px black; }
-        body .container .switchHolder .normalSwitch img:hover {
-          -webkit-box-shadow: 0 0 2px 5px white;
-                  box-shadow: 0 0 2px 5px white;
-          cursor: pointer; }
-      body .container .switchHolder .greyScaleSwitch img {
-        width: 40px;
-        height: 40px;
-        float: left;
-        margin-left: 10%;
-        margin-top: 2%;
-        background-color: gray;
-        border-radius: 10%;
-        -webkit-box-shadow: 0 0 0 4px gray, 0 0 5px 4px black;
-                box-shadow: 0 0 0 4px gray, 0 0 5px 4px black; }
-        body .container .switchHolder .greyScaleSwitch img:hover {
-          -webkit-box-shadow: 0 0 2px 5px gray;
-                  box-shadow: 0 0 2px 5px gray;
-          cursor: pointer; }
-      body .container .switchHolder .sepiaSwitch img {
-        width: 40px;
-        height: 40px;
-        float: left;
-        margin-left: 10%;
-        margin-top: 2%;
-        background-color: brown;
-        border-radius: 10%;
-        -webkit-box-shadow: 0 0 0 4px brown, 0 0 5px 4px black;
-                box-shadow: 0 0 0 4px brown, 0 0 5px 4px black; }
-        body .container .switchHolder .sepiaSwitch img:hover {
-          -webkit-box-shadow: 0 0 2px 5px brown;
-                  box-shadow: 0 0 2px 5px brown;
-          cursor: pointer; }
-      body .container .switchHolder .saturationSwitch img {
-        width: 40px;
-        height: 40px;
-        float: left;
-        margin-left: 10%;
-        margin-top: 2%;
-        background-color: red;
-        border-radius: 10%;
-        -webkit-box-shadow: 0 0 0 4px red, 0 0 5px 4px black;
-                box-shadow: 0 0 0 4px red, 0 0 5px 4px black; }
-        body .container .switchHolder .saturationSwitch img:hover {
-          -webkit-box-shadow: 0 0 2px 5px red;
-                  box-shadow: 0 0 2px 5px red;
-          cursor: pointer; }
-    body .container .greyScaleFilter {
-      -webkit-filter: grayscale(1);
-              filter: grayscale(1); }
-    body .container .sepiaFilter {
-      -webkit-filter: sepia(1);
-              filter: sepia(1); }
-    body .container .saturationFilter {
-      -webkit-filter: saturate(6);
-              filter: saturate(6); }
+      background-color: transparent; }
