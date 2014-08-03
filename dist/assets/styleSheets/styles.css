@@ -150,7 +150,6 @@ body {
   body .container {
     width: 100%;
     max-width: 1100px;
-    background-image: url("../../assets/images/paper_@2X.png");
     width: 100%;
     margin: 0 auto;
     padding: 10px;
@@ -166,76 +165,177 @@ body {
       text-align: center; }
     body .container .selected {
       opacity: 0.33; }
-    body .container .greyScaleFilter {
+    body .container .greyScaleFilterMin {
+      -webkit-filter: grayscale(0.3);
+              filter: grayscale(0.3); }
+    body .container .greyScaleFilterMid {
+      -webkit-filter: grayscale(0.6);
+              filter: grayscale(0.6); }
+    body .container .greyScaleFilterMax {
       -webkit-filter: grayscale(1);
               filter: grayscale(1); }
-    body .container .sepiaFilter {
+    body .container .sepiaFilterMin {
+      -webkit-filter: sepia(0.3);
+              filter: sepia(0.3); }
+    body .container .sepiaFilterMid {
+      -webkit-filter: sepia(0.6);
+              filter: sepia(0.6); }
+    body .container .sepiaFilterMax {
       -webkit-filter: sepia(1);
               filter: sepia(1); }
-    body .container .saturationFilter {
+    body .container .satFilterMin {
+      -webkit-filter: saturate(3);
+              filter: saturate(3); }
+    body .container .satFilterMid {
       -webkit-filter: saturate(6);
               filter: saturate(6); }
+    body .container .satFilterMax {
+      -webkit-filter: saturate(9);
+              filter: saturate(9); }
     body .container .switchHolder {
-      clear: both;
-      width: 800px;
-      margin-left: 5%; }
-      body .container .switchHolder .normalSwitch img {
-        width: 40px;
-        height: 40px;
+      float: left;
+      width: 100%;
+      margin-top: 3%;
+      clear: both; }
+      body .container .switchHolder .greyBackground {
+        float: left;
         clear: both;
+        margin-left: 24%;
+        width: 100px;
+        height: 100px; }
+        body .container .switchHolder .greyBackground .greyScaleSwitch {
+          width: 90px;
+          height: 90px;
+          border-radius: 50%;
+          border: 5px solid #fff;
+          background-color: rgba(255, 255, 255, 0.2);
+          float: left;
+          -webkit-transition: all 0.4s;
+                  transition: all 0.4s;
+          margin-left: 8%; }
+          body .container .switchHolder .greyBackground .greyScaleSwitch:hover {
+            cursor: pointer;
+            -webkit-box-shadow: 0 0 3px 2px #dcdcc8;
+                    box-shadow: 0 0 3px 2px #dcdcc8; }
+          body .container .switchHolder .greyBackground .greyScaleSwitch img {
+            width: 60px;
+            height: 60px;
+            margin-left: 10px;
+            margin-top: 10px; }
+        body .container .switchHolder .greyBackground .gsSlider {
+          margin-top: 44px;
+          display: none; }
+        body .container .switchHolder .greyBackground input[type='range'] {
+          appearance: none;
+          border-radius: 5px;
+          background-color: #FFF;
+          -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.8);
+                  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.8);
+          border: 2px solid gray;
+          height: 10px;
+          width: 100px; }
+        body .container .switchHolder .greyBackground input[type='range']::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          border-radius: 20px;
+          width: 22px;
+          height: 22px;
+          background-color: #797979;
+          -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.5);
+                  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.5); }
+        body .container .switchHolder .greyBackground input:focus {
+          outline: 0; }
+      body .container .switchHolder .sepiaBackground {
         float: left;
-        margin-left: 32%;
-        margin-top: 2%;
-        background-color: white;
-        border-radius: 10%;
-        -webkit-box-shadow: 0 0 0 4px white, 0 0 5px 4px black;
-                box-shadow: 0 0 0 4px white, 0 0 5px 4px black; }
-        body .container .switchHolder .normalSwitch img:hover {
-          -webkit-box-shadow: 0 0 2px 6px white;
-                  box-shadow: 0 0 2px 6px white;
-          cursor: pointer; }
-      body .container .switchHolder .greyScaleSwitch img {
-        width: 40px;
-        height: 40px;
+        margin-left: 8%;
+        width: 100px;
+        height: 100px; }
+        body .container .switchHolder .sepiaBackground .sepiaSwitch {
+          width: 90px;
+          height: 90px;
+          border-radius: 50%;
+          border: 5px solid #fff;
+          background-color: rgba(255, 255, 255, 0.2);
+          float: left;
+          -webkit-transition: all 0.4s;
+                  transition: all 0.4s;
+          margin-left: 8%; }
+          body .container .switchHolder .sepiaBackground .sepiaSwitch:hover {
+            cursor: pointer;
+            -webkit-box-shadow: 0 0 3px 2px #dcdcc8;
+                    box-shadow: 0 0 3px 2px #dcdcc8; }
+          body .container .switchHolder .sepiaBackground .sepiaSwitch img {
+            width: 60px;
+            height: 60px;
+            margin-left: 10px;
+            margin-top: 10px; }
+        body .container .switchHolder .sepiaBackground .sepSlider {
+          margin-top: 44px;
+          display: none; }
+        body .container .switchHolder .sepiaBackground input[type='range'] {
+          appearance: none;
+          border-radius: 5px;
+          background-color: #FFF;
+          -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.8);
+                  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.8);
+          border: 2px solid gray;
+          height: 10px;
+          width: 100px; }
+        body .container .switchHolder .sepiaBackground input[type='range']::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          border-radius: 20px;
+          width: 22px;
+          height: 22px;
+          background-color: #B8A480;
+          -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.5);
+                  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.5); }
+        body .container .switchHolder .sepiaBackground input:focus {
+          outline: 0; }
+      body .container .switchHolder .saturationBackground {
         float: left;
-        margin-left: 10%;
-        margin-top: 2%;
-        background-color: gray;
-        border-radius: 10%;
-        -webkit-box-shadow: 0 0 0 4px gray, 0 0 5px 4px black;
-                box-shadow: 0 0 0 4px gray, 0 0 5px 4px black; }
-        body .container .switchHolder .greyScaleSwitch img:hover {
-          -webkit-box-shadow: 0 0 2px 6px gray;
-                  box-shadow: 0 0 2px 6px gray;
-          cursor: pointer; }
-      body .container .switchHolder .sepiaSwitch img {
-        width: 40px;
-        height: 40px;
-        float: left;
-        margin-left: 10%;
-        margin-top: 2%;
-        background-color: brown;
-        border-radius: 10%;
-        -webkit-box-shadow: 0 0 0 4px brown, 0 0 5px 4px black;
-                box-shadow: 0 0 0 4px brown, 0 0 5px 4px black; }
-        body .container .switchHolder .sepiaSwitch img:hover {
-          -webkit-box-shadow: 0 0 2px 6px brown;
-                  box-shadow: 0 0 2px 6px brown;
-          cursor: pointer; }
-      body .container .switchHolder .saturationSwitch img {
-        width: 40px;
-        height: 40px;
-        float: left;
-        margin-left: 10%;
-        margin-top: 2%;
-        background-color: red;
-        border-radius: 10%;
-        -webkit-box-shadow: 0 0 0 4px red, 0 0 5px 4px black;
-                box-shadow: 0 0 0 4px red, 0 0 5px 4px black; }
-        body .container .switchHolder .saturationSwitch img:hover {
-          -webkit-box-shadow: 0 0 2px 6px red;
-                  box-shadow: 0 0 2px 6px red;
-          cursor: pointer; }
+        margin-left: 8%;
+        width: 100px;
+        height: 100px; }
+        body .container .switchHolder .saturationBackground .saturationSwitch {
+          width: 90px;
+          height: 90px;
+          border-radius: 50%;
+          border: 5px solid #fff;
+          background-color: rgba(255, 255, 255, 0.2);
+          float: left;
+          -webkit-transition: all 0.4s;
+                  transition: all 0.4s;
+          margin-left: 8%; }
+          body .container .switchHolder .saturationBackground .saturationSwitch:hover {
+            cursor: pointer;
+            -webkit-box-shadow: 0 0 3px 2px #dcdcc8;
+                    box-shadow: 0 0 3px 2px #dcdcc8; }
+          body .container .switchHolder .saturationBackground .saturationSwitch img {
+            width: 60px;
+            height: 60px;
+            margin-left: 10px;
+            margin-top: 10px; }
+        body .container .switchHolder .saturationBackground .satSlider {
+          margin-top: 44px;
+          display: none; }
+        body .container .switchHolder .saturationBackground input[type='range'] {
+          appearance: none;
+          border-radius: 5px;
+          background-color: #FFF;
+          -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.8);
+                  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.8);
+          border: 2px solid gray;
+          height: 10px;
+          width: 100px; }
+        body .container .switchHolder .saturationBackground input[type='range']::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          border-radius: 20px;
+          width: 22px;
+          height: 22px;
+          background-color: #FF0D00;
+          -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.5);
+                  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.5); }
+        body .container .switchHolder .saturationBackground input:focus {
+          outline: 0; }
     body .container .gallery .previews,
     body .container .gallery .mainImage {
       float: left;
@@ -267,7 +367,7 @@ body {
       height: 430px;
       position: absolute;
       left: 310px;
-      top: 95px;
+      top: 105px;
       opacity: 0.2; }
       body .container .placeholder h3 {
         text-align: center;
