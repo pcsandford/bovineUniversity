@@ -149,13 +149,21 @@ body {
   background-color: #383434; }
   body .container {
     width: 100%;
-    max-width: 1000px;
-    background-color: green;
+    max-width: 1100px;
+    background-image: url("../../assets/images/paper_@2X.png");
     width: 100%;
     margin: 0 auto;
     padding: 10px;
     padding-bottom: 40px;
-    font-family: 'Calibri','CalibriRegular',Verdana,Arial,Helvetica,sans-serif; }
+    font-family: sans-serif; }
+    body .container h1 {
+      color: #E6E6E6;
+      text-shadow: 1px 1px 1px black;
+      font-family: sans-serif;
+      font-weight: 200;
+      font-size: 40px;
+      letter-spacing: 2px;
+      text-align: center; }
     body .container .selected {
       opacity: 0.33; }
     body .container .greyScaleFilter {
@@ -235,7 +243,6 @@ body {
       margin-left: 2%; }
     body .container .gallery .mainImage {
       max-width: 400px;
-      width: 100%;
       font-size: 12px; }
     body .container .gallery .previews a {
       display: block;
@@ -264,9 +271,8 @@ body {
       opacity: 0.2; }
       body .container .placeholder h3 {
         text-align: center;
-        width: 200px;
-        margin-left: 30%;
-        margin-top: 20%;
+        padding: 14%;
+        line-height: 1.5;
         font-family: verdana;
         color: white; }
     body .container .gallery .previews a:hover,
@@ -279,9 +285,15 @@ body {
       opacity: 0; }
     body .container .textbox {
       float: left;
-      max-width: 150px;
-      height: 300px;
+      max-width: 220px;
+      height: 350px;
       margin-left: 25%;
-      margin-top: 0;
-      padding: 20px;
-      background-color: transparent; }
+      margin-top: 10;
+      padding: 15px;
+      background-color: transparent;
+      color: #E6E6E6;
+      text-shadow: 1px 1px 1px black;
+      font-weight: 100;
+      font-family: sans-serif;
+      line-height: 1.5;
+      letter-spacing: 0.5; }
