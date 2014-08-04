@@ -6,6 +6,8 @@ body
 		div(class="gallery")
 			h1 The "Beatles Ashram". Rishikesh, India
 
+			//-thumbnail gallery
+
 			div(class="previews")
 				a(value="1" href="#" data-full="assets/images/India/image1Large.jpg" data-info="The front gates to the ashram. It was abandoned in 1997 and it is now slowing being consumed by forest. Inside you will find the shells of many buildings, meditation cells and lecture halls. Technically the ashram is closed to the public, but 50 rupees will get you anything in India"
 					data-zoom-image="assets/images/aIndia/image1Large.jpg")
@@ -23,43 +25,26 @@ body
 					data-zoom-image="assets/images/India/image5Large.jpg")
 					img(src="assets/images/India/image5Small.jpg")
 	
-			//- div(class="magnify")
-			//-magnifying glass container
-			//- div(class="large")
 			
+			//-main image info - left in incase we want the first image to be displayed first	
 
 			div(class="mainImage")
-				//- first image is viewable at the start
 				a(class="fancyImage" href="")
 					img(id ="zoom" src="" data-zoom-image="")
+
+			//-placeholder with descriptive text
 
 			div(class="placeholder")
 				h3 In February 1968, the Beatles traveled to the Maharishi Mahesh Yogi ashram in Rishikesh, India. There they attend an advanced Transcendental Meditation training session. It is said that many of the songs in the White album came out of their time here. Click on the images to the left to get a closer look.  
 
 			div(class="textbox")
 				p
-			//- div(class="textbox1")
-			//- 	p 1.
+		
 
-			//- div(class="textbox2")
-			//- 	p 2.
-
-			//- div(class="textbox3")s
-			//- 	p 3.
-
-			//- div(class="textbox4")
-			//- 	p 4.
-			
-			//- div(class="textbox5")
-			//- 	p 5.
-
-			
+		//-div to hold the switches for applying filters
 
 		div(class="switchHolder")
-			//- div(class="normalBackground")
-			//- 	div(class="normalSwitch")
-			//- 		img(src="assets/images/camera.png")
-						
+	
 
 			div(class="greyBackground")
 				div(class="greyScaleSwitch")
@@ -67,8 +52,6 @@ body
 				div(class = "gsSlider")
 					form
 						input(id="slider" type="range" min="0" max="100" step="1" value = "0")
-		
-			<!-- <p class="note">Current value: <span id="currentValue">0</span></p> -->
 	
 
 			div(class="sepiaBackground")
@@ -85,6 +68,8 @@ body
 					form
 						input(id="satSlider" type="range" min="0" max="100" step="1" value = "0")
 
+
+//-jQuery section
 			
 script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
 script(src="fancybox/jquery.fancybox.js?v=2.1.4")
@@ -93,7 +78,7 @@ script(src="jquery.mlens-1.4.min.js")
 script.
 	$(function(){
 		
-
+	//- function to select and display larger images by selecting relevant thumbnails
 
 		$('.previews a').on('click',function(e){
 			e.preventDefault();
@@ -114,17 +99,11 @@ script.
 		});
 			
 		
-		
+	//--fancybox code
 		
 		$('.fancyImage').fancybox();
 	
-	//-clear switch code
-
-		
-		//- $('.mainImage img').removeClass('greyScaleFilter');
-		//- $('.mainImage img').removeClass('sepiaFilter');
-		//- $('.mainImage img').removeClass('saturationFilter');
-
+	
 	//- greyscale switch code
 
 		var gsState = false
@@ -262,44 +241,6 @@ script.
 						$('.mainImage img').removeClass('satFilterMax');
 					}
 					});	
-
-		
-		//- //colourfilter stuff
-		//- $('.normalSwitch').on('click', function(){
-		//- console.log('test');
-		//- 	$('.mainImage img').removeClass('greyScaleFilter');
-		//- 	$('.mainImage img').removeClass('sepiaFilter');
-		//- 	$('.mainImage img').removeClass('saturationFilter');
-
-		//- }); 
-
-		//- $('.greyScaleSwitch').on('click', function(){
-		//- console.log('test');
-		//- 	$('.mainImage img').addClass('greyScaleFilter');
-		//- 	$('.mainImage img').removeClass('sepiaFilter');
-		//- 	$('.mainImage img').removeClass('saturationFilter');
-		//- }); 
-
-		//- $('.sepiaSwitch').on('click', function(){
-		//- console.log('test');
-		//- 	$('.mainImage img').addClass('sepiaFilter');
-		//- 	$('.mainImage img').removeClass('saturationFilter');
-		//- 	$('.mainImage img').removeClass('greyScaleFilter');
-		//- }); 
-
-		//- $('.saturationSwitch').on('click', function(){
-		//- console.log('test');
-		//- 	$('.mainImage img').addClass('saturationFilter');
-		//- 	$('.mainImage img').removeClass('sepiaFilter');
-		//- 	$('.mainImage img').removeClass('greyScaleFilter');
-		//- }); 
-		
-
-		
-		
-	
-		
-
 	});
 
 	

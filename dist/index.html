@@ -12,8 +12,7 @@
     <div class="gallery">
       <h1>The "Beatles Ashram". Rishikesh, India</h1>
       <div class="previews"><a value="1" href="#" data-full="assets/images/India/image1Large.jpg" data-info="The front gates to the ashram. It was abandoned in 1997 and it is now slowing being consumed by forest. Inside you will find the shells of many buildings, meditation cells and lecture halls. Technically the ashram is closed to the public, but 50 rupees will get you anything in India" data-zoom-image="assets/images/aIndia/image1Large.jpg"><img src="assets/images/India/image1Small.jpg"/></a><a value="2" href="#" data-full="assets/images/India/image2Large.jpg" data-info="Here you can see the transcendental meditation cells and their beautiful view of the Ganges" data-zoom-image="assets/images/India/image2Large.jpg"><img src="assets/images/India/image2Small.jpg"/></a><a value="3" href="#" data-full="assets/images/India/image3Large.jpg" data-info="The meditation chambers of George, Paul, John and Ringo - as seen in the photo from left to right" data-zoom-image="assets/images/India/image3Large.jpg"><img src="assets/images/India/image3Small.jpg"/></a><a value="4" href="#" data-full="assets/images/India/image4Large.jpg" data-info="One of the main lecture halls. Shortly after these photos were taken, an artist turned this space into what is now known as the Beatles Cathedral Gallery. The walls are now covered with his paintings which include many great spiritual leaders from Gandhi to Mother Teresa" data-zoom-image="assets/images/India/image4Large.jpg"><img src="assets/images/India/image4Small.jpg"/></a><a value="5" href="#" data-full="assets/images/India/image5Large.jpg" data-info="Graffiti, art installations, and giant murals can be found in many rooms throughout the ashram, creating an interesting contrast between the decrepit decaying buildings and their brilliant colors" data-zoom-image="assets/images/India/image5Large.jpg"><img src="assets/images/India/image5Small.jpg"/></a></div>
-      <div class="mainImage"><a href="" class="fancyImage"><img id="zoom" src="" data-zoom-image=""/></a>
-      </div>
+      <div class="mainImage"><a href="" class="fancyImage"><img id="zoom" src="" data-zoom-image=""/></a></div>
       <div class="placeholder">
         <h3>In February 1968, the Beatles traveled to the Maharishi Mahesh Yogi ashram in Rishikesh, India. There they attend an advanced Transcendental Meditation training session. It is said that many of the songs in the White album came out of their time here. Click on the images to the left to get a closer look.  </h3>
       </div>
@@ -29,7 +28,7 @@
             <input id="slider" type="range" min="0" max="100" step="1" value="0"/>
           </form>
         </div>
-      </div><!-- <p class="note">Current value: <span id="currentValue">0</span></p> -->
+      </div>
       <div class="sepiaBackground">
         <div class="sepiaSwitch"><img src="assets/images/film.png"/></div>
         <div class="sepSlider">
@@ -54,7 +53,7 @@
 <script src="jquery.mlens-1.4.min.js"></script>
 <script>
   $(function(){
-  
+  //- function to select and display larger images by selecting relevant thumbnails
   
    $('.previews a').on('click',function(e){
     e.preventDefault();
@@ -71,13 +70,8 @@
     $('p').html($(this).data('info'));
     $('.fancyImage').attr('href', biggerPicture);
    });
+  //--fancybox code
    $('.fancyImage').fancybox();
-  //-clear switch code
-  
-   //- $('.mainImage img').removeClass('greyScaleFilter');
-   //- $('.mainImage img').removeClass('sepiaFilter');
-   //- $('.mainImage img').removeClass('saturationFilter');
-   
   //- greyscale switch code
   
    var gsState = false
@@ -212,38 +206,6 @@
        $('.mainImage img').removeClass('satFilterMax');
       }
       });	
-      
-   //- //colourfilter stuff
-   //- $('.normalSwitch').on('click', function(){
-   //- console.log('test');
-   //- 	$('.mainImage img').removeClass('greyScaleFilter');
-   //- 	$('.mainImage img').removeClass('sepiaFilter');
-   //- 	$('.mainImage img').removeClass('saturationFilter');
-   
-   //- }); 
-   
-   //- $('.greyScaleSwitch').on('click', function(){
-   //- console.log('test');
-   //- 	$('.mainImage img').addClass('greyScaleFilter');
-   //- 	$('.mainImage img').removeClass('sepiaFilter');
-   //- 	$('.mainImage img').removeClass('saturationFilter');
-   //- }); 
-   
-   //- $('.sepiaSwitch').on('click', function(){
-   //- console.log('test');
-   //- 	$('.mainImage img').addClass('sepiaFilter');
-   //- 	$('.mainImage img').removeClass('saturationFilter');
-   //- 	$('.mainImage img').removeClass('greyScaleFilter');
-   //- }); 
-   
-   //- $('.saturationSwitch').on('click', function(){
-   //- console.log('test');
-   //- 	$('.mainImage img').addClass('saturationFilter');
-   //- 	$('.mainImage img').removeClass('sepiaFilter');
-   //- 	$('.mainImage img').removeClass('greyScaleFilter');
-   //- }); 
-   
-   
   });
   
   

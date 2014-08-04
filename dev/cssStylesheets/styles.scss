@@ -45,6 +45,8 @@ body {
   width:100%;
   background-color: #383434;
 
+//main container and header text
+
 .container {
   width:100%;
   max-width: 1100px;
@@ -66,10 +68,14 @@ h1 {
   text-align: center;
 }
 
+//changes the opacity of selected thumbnail
+
 .selected {
   opacity:0.33;
   }
   
+//filter information to be added through jQuery code
+
 .greyScaleFilterMin {
   filter: grayscale(0.3);
 }
@@ -106,6 +112,7 @@ h1 {
   filter: saturate(9);
   }
 
+//container to hold the three filter switches
 
 .switchHolder {
   float:left;
@@ -113,21 +120,8 @@ h1 {
   margin-top: 3%;
   clear:both;
   
- 
-    // .normalSwitch { 
-    //   @include switchFormat;
-    //   clear:both;
-    //   margin-left: 3%;
-      
-    //   &:hover {
-    //         cursor:pointer;
-    //         box-shadow: 0 0 3px 2px rgb(220,220,200);
-    //       }
 
-    //   img {
-    //     @include imgFormat;  
-    //   }
-    // }
+//greyscale filter switch 
  
   .greyBackground{
     float:left;
@@ -178,6 +172,9 @@ h1 {
     }
 
   }
+
+  //sepia filter switch
+
     .sepiaBackground {
     float:left;
     margin-left: 8%;
@@ -228,6 +225,9 @@ h1 {
     }
 
   }
+
+  //color saturation filter switch
+
     .saturationBackground {
     float:left;
     margin-left: 8%;
@@ -280,7 +280,10 @@ h1 {
   }
   }
 
-// .gallery {}
+
+
+//gallery setup for thumbnail previews and main images
+
 .gallery .previews, 
 .gallery .mainImage {
     float: left;
@@ -321,6 +324,10 @@ h1 {
     // border: 2px solid gray;
 }
 
+
+//placeholder image visable when there is no image selected
+// on document load and placeholder text
+
 .placeholder {
   background-color: black;
   width: 650px;
@@ -342,6 +349,9 @@ h1 {
     }
 }
 
+
+//hover states for gallery previews and main image
+
 .gallery .previews a:hover,
 .gallery .previews a.selected {
    box-shadow:0 0 0 2px white, 0 0 4px 3px black;
@@ -362,6 +372,9 @@ h1 {
 // }
 
 
+//textbox for html text which will be visible to the right
+// of the selected image
+
 .textbox {
   float:left;
   max-width:220px;
@@ -380,19 +393,6 @@ h1 {
 }
 
 
-// .textbox1,
-// .textbox2,
-// .textbox3,
-// .textbox4,
-// .textbox5 {
-//   float:left;
-//   max-width:200px;
-//   margin-left: 26%;
-//   margin-top:0;
-//   padding:20px;
-//   background-color: white;
-//   display:none
-// }
 
 
 }//container closing
